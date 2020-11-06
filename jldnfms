@@ -1,0 +1,33 @@
+### User | Quiz (Join Model) | Category | Question | Subcategory
+
+
+----------------
+
+### User <br />
+* A User has many Quizzes <br />
+* has many categories, through quizzes
+
+Category
+has many quizzes (direct)
+has many users, through quizzes
+has many questions
+has many quizzes, through questions (redundant)
+has many subcategories 
+
+Quiz
+*belongs to User (foriegn key)
+*belongs to category (foreign key)
+*has many questions
+*has many categories, through questions
+
+Question (Joins Quiz and Category)
+*belongs to quiz
+*belong to category
+*Quiz ID
+*Category ID
+
+### Subcategory (one to many)
+* belongs to a category
+
+
+User
