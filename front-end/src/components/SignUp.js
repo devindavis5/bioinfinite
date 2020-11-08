@@ -7,6 +7,7 @@ export default class SignUp extends Component {
         super()
 
         this.state = {
+            email: "",
             username: "",
             password: ""
         }
@@ -28,13 +29,17 @@ export default class SignUp extends Component {
         return (
             <div>
             <Form>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="email" name="email" onChange={this.onChange} />
+                </Form.Group>
                 <Form.Group controlId="formBasicUsername">
                     <Form.Label>Username</Form.Label>
-                    <Form.Control type="text" placeholder="Enter username" name="username" onChange={this.onChange} />
+                    <Form.Control type="text" name="username" onChange={this.onChange} />
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" />
                 </Form.Group>
                 <Button to="/maincontainer" onClick={this.onSubmit} variant="primary" type="submit">Create Account</Button>
             </Form>
