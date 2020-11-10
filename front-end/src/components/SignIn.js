@@ -30,7 +30,7 @@ export default class SignIn extends Component {
         })
         .then(res => res.json())
         .then(res => {
-            if (res) {
+            if (!res.message) {
                 const token = res.jwt;
                 localStorage.setItem('token', token);
                 const { history } = this.props
