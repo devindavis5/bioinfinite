@@ -105,38 +105,21 @@ background for words
 -----
 
 ## Tenative Schedule
-
-### Thursday
-* environment > backend
-* research themes
-  * wire framing (balsamiq?)
-  * bootstrap
-* readme
-
-### Friday
-* finish backend (models, migrations, database, seeds, resources, etc)
-* map out navigation of routing
-* create basic static webpage
-* navbar, header, footer
-
-### Saturday
-* build carousel and template for show pages
-
-### Sunday
-* fill in show pages
-
-### Monday
-* mvp
-
 ### Tuesday
-* decide and begin on which stretch goals to pursue
-
+* navbar/logout feature
+  * profile dropdown (myinfo, quiz history, logout)
+* map out navigation of routing/dynamic web page
+* home page (login/logout)
 ### Wednesday
-* final feature and stretch goal additions
-
+* maincontainer page (category page)
+  * carousel (MVP)
+* category show page
+  * table with extendable rows (header, introduction, subcategories, etc)
+* profile sidebar feature
 ### Thursday
 * only css changes
-
+* decide and begin on which stretch goals to pursue
+* final feature and stretch goal additions
 ### Friday
 * record walkthrough video/voiceover
 * update readme with any changes

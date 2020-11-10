@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import SubCategoryShowPage from './SubCategoryShowPage.js'
-import QuizForm from './QuizForm.js'
+// import QuizForm from './QuizForm.js'
 
 export default class TopicShowPage extends Component {
     render() {
@@ -8,7 +8,6 @@ export default class TopicShowPage extends Component {
             <div>
                 <h1>TopicShowPage Component</h1>
                 <SubCategoryShowPage />
-                <QuizForm />
             </div>
         )
     }
