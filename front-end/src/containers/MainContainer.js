@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Carousel from '../components/Carousel.js'
 import NavBar from '../components/NavBar.js'
 import Footer from '../components/Footer.js'
-import UserShowPanel from '../components/UserShowPanel.js'
 
 export default class MainContainer extends Component {
     render() {
@@ -12,7 +11,6 @@ export default class MainContainer extends Component {
                 <h1>MainContainer Component</h1>
                 <Carousel />
                 <Footer />
-                <UserShowPanel/>
             </div>
         )
     }
