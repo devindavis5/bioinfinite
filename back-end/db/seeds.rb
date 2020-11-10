@@ -12,8 +12,7 @@ Quiz.destroy_all
 Question.destroy_all
 SubCategory.destroy_all
 
-bree = User.create(name: "Bree")
-devin = User.create(name: "Devin")
+bree = User.create(name: "Bree", email: "bree@gmail.com", password: "3693" )
 
 # metabolism
 # macromolecules
