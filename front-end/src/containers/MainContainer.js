@@ -4,11 +4,25 @@ import NavBar from '../components/NavBar.js'
 import Footer from '../components/Footer.js'
 
 export default class MainContainer extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            categories: []
+        }
+    }
+
+    componentDidMount() {
+        fetch("http://localhost:3000/categories").then(res => res.json())
+        .then(categories => this.setState({categories}))
+    }
+    
     render() {
         return (
             <div>
                 <NavBar />
-                <Carousel />
+                <h1>MainContainer Component</h1>
+                <Carousel categories={this.state.categories}/>
                 <Footer />
             </div>
         )

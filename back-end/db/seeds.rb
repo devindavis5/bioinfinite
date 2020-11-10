@@ -28,4 +28,3 @@ cell_question_one = Question.create(description: "Which organelle is the powerho
 cell_subcategory_one = SubCategory.create(name: "Cells Subcategory 1 Name", description: "Cells Subcategory 1 Description", category_id: cells.id)
 
 puts "Good to go!"
-puts "Hi"

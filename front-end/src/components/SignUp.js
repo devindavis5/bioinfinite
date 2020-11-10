@@ -69,7 +69,7 @@ export default class SignUp extends Component {
                 <Button onClick={this.onSubmit} variant="primary" type="submit">Create Account</Button>
             </Form>
             <br></br>
-            <Button variant="primary" onClick={this.signIn} type="submit">Sign in Instead</Button>
+            <Button variant="primary" onClick={this.signIn} type="submit">Sign In Instead</Button>
         </div>
         )
     }

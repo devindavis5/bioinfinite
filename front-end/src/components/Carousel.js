@@ -6,7 +6,9 @@ export default class Carousel extends Component {
         return (
             <div>
                 <h1>Carousel Component</h1>
-                <Category />
+                {this.props.categories.map(category => {
+                    return <Category category={category} key={category.id}/>
+                })}
             </div>
         )
     }
