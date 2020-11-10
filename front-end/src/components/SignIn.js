@@ -7,7 +7,7 @@ export default class SignIn extends Component {
         super()
 
         this.state = {
-            username: "",
+            name: "",
             password: ""
         }
     }
@@ -19,9 +19,31 @@ export default class SignIn extends Component {
 
     onSubmit = (e) => {
         e.preventDefault()
+
+        fetch('http://localhost:3000/auth', {
+            method: 'POST',
+            headers: {
+              'Content-Type':'application/json',
+              'Accepts':'application/json'
+            },
+            body: JSON.stringify({user: this.state})
+        })
+        .then(res => res.json())
+        .then(res => {
+            if (res) {
+                const token = res.jwt;
+                localStorage.setItem('token', token);
+                const { history } = this.props
+                history.push('/maincontainer')
+            } else {
+                alert("Please enter a valid name and password.")
+            }
+        })  
+    }
+
+    signUp = () => {
         const { history } = this.props
-        console.log(this.state.username)
-        history.push('/maincontainer')
+        history.push('/signup')
     }
 
     render() {
@@ -29,15 +51,17 @@ export default class SignIn extends Component {
             <div>
                 <Form>
                     <Form.Group controlId="formBasicUsername">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" name="username" onChange={this.onChange} />
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control type="text" name="name" onChange={this.onChange} />
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" />
+                        <Form.Control type="password" name="password" onChange={this.onChange} />
                     </Form.Group>
                     <Button to="/maincontainer" onClick={this.onSubmit} variant="primary" type="submit">Sign in</Button>
                 </Form>
+                <br></br>
+                <Button variant="primary" onClick={this.signUp} type="submit">Sign up Instead</Button>
             </div>
         )
     }
