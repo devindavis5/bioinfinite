@@ -8,7 +8,6 @@ export default class MainContainer extends Component {
         return (
             <div>
                 <NavBar />
-                <h1>MainContainer Component</h1>
                 <Carousel />
                 <Footer />
             </div>
