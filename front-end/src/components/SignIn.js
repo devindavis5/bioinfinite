@@ -34,7 +34,7 @@ export default class SignIn extends Component {
                 const token = res.jwt;
                 localStorage.setItem('token', token);
                 const { history } = this.props
-                history.push('/maincontainer')
+                history.push({pathname: '/maincontainer', state: { user: res.user}})
             } else {
                 alert("Please enter a valid name and password.")
             }
