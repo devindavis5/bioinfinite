@@ -32,9 +32,9 @@ export default class NavBar extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#pricing" onClick={this.profile} >My Account</Nav.Link>
+                        <Nav.Link onClick={this.profile} >My Account</Nav.Link>
                         {/* <Nav.Link href="#pricing">Quiz History</Nav.Link> */}
-                        <Nav.Link href="#pricing" onClick={this.logout} >Logout</Nav.Link>
+                        <Nav.Link onClick={this.logout} >Logout</Nav.Link>
                         {/* <NavDropdown title="My Profile" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">View Quiz History</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">View Account Info</NavDropdown.Item>
@@ -43,12 +43,12 @@ export default class NavBar extends Component {
                         </NavDropdown> */}
                     </Nav>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search Topics" className="mr-sm-2" />
+                    <FormControl type="text" placeholder="Search Topics" onChange={(e) => this.props.setSearch(e.target.value)}className="mr-sm-2" />
                     <Button variant="outline-light">Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
-                {this.state.profile ? <UserShowPanel profile={this.profile} /> : null}
+                {this.state.profile ? <UserShowPanel user={this.props.user} profile={this.profile} /> : null}
             </div>
         )
     }

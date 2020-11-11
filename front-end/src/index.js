@@ -13,16 +13,15 @@ import TopicShowPage from './components/TopicShowPage';
 ReactDOM.render(
   <Router>
     <Switch>
-        <Route exact path='/maincontainer' component={MainContainer}/>
+        <Route exact path='/maincontainer' render={routeProps => <MainContainer {...routeProps}/>}/>
         <Route exact path='/signin' component={SignIn}/>
         <Route exact path='/signup' component={SignUp}/>
-        <Route exact path='/category/:id' component={TopicShowPage}/>
+        <Route exact path='/category/:id' render={routeProps => <TopicShowPage {...routeProps} />}/>
         <Route path='/' component={App}/>
     </Switch>
   </Router>,
   document.getElementById('root')
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

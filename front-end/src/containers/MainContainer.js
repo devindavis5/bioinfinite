@@ -5,11 +5,15 @@ import Footer from '../components/Footer.js'
 
 export default class MainContainer extends Component {
 
-    constructor() {
-        super()
-        this.state = {
-            categories: []
-        }
+    state = {
+        categories: [],
+        search: '',
+        user: this.props.location.state.user
+    }
+
+    setSearch = (input) => {
+        let search = input.toLowerCase()
+        this.setState({search})
     }
 
     componentDidMount() {
@@ -18,11 +22,11 @@ export default class MainContainer extends Component {
     }
     
     render() {
+        const categories = this.state.categories.filter(c => c.name.toLowerCase().includes(this.state.search))
         return (
             <div>
-                <NavBar />
-                <h1>MainContainer Component</h1>
-                <Carousel categories={this.state.categories}/>
+                <NavBar setSearch={this.setSearch} user={this.state.user} />
+                <Carousel categories={categories} />
                 <Footer />
             </div>
         )

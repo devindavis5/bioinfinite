@@ -36,7 +36,7 @@ export default class SignUp extends Component {
         })
         .then(res => res.json())
         .then(res => {
-            if (res.user != undefined) {
+            if (res.user !== undefined) {
                 const { history } = this.props
                 history.push('/signin')
             } else {

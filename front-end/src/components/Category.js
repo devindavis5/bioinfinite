@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import TopicShowPage from './TopicShowPage';
 
 export default class Category extends Component {
     
@@ -12,9 +11,7 @@ export default class Category extends Component {
         let category = this.props.category
         return (
             <div onClick={() => this.handleClick(category.id)}>
-                <h1>Category Component</h1>
-                <p>{category.name}</p>
-                {/* <TopicShowPage/> */}
+                <h3>{category.name}</h3>
             </div>
         )
     }
