@@ -43,7 +43,7 @@ export default class NavBar extends Component {
                         </NavDropdown> */}
                     </Nav>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search Topics" className="mr-sm-2" />
+                    <FormControl type="text" placeholder="Search Topics" onChange={(e) => this.props.setSearch(e.target.value)}className="mr-sm-2" />
                     <Button variant="outline-light">Search</Button>
                     </Form>
                 </Navbar.Collapse>

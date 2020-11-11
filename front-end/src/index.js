@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route exact path='/maincontainer' component={MainContainer}/>
         <Route exact path='/signin' component={SignIn}/>
         <Route exact path='/signup' component={SignUp}/>
-        <Route exact path='/category/:id' component={TopicShowPage}/>
+        <Route exact path='/category/:id' render={routeProps => <TopicShowPage {...routeProps} />}/>
         <Route path='/' component={App}/>
     </Switch>
   </Router>,

@@ -7,7 +7,7 @@ import img from '../assets/kemptons-blank-profile-picture.jpg'
 export default class UserShowPanel extends Component {
     render() {
         return (
-            <div>
+            <div className="position-absolute">
                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>

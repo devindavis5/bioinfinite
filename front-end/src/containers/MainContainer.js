@@ -8,8 +8,14 @@ export default class MainContainer extends Component {
     constructor() {
         super()
         this.state = {
-            categories: []
+            categories: [],
+            search: ''
         }
+    }
+
+    setSearch = (input) => {
+        let search = input.toLowerCase()
+        this.setState({search})
     }
 
     componentDidMount() {
@@ -18,11 +24,11 @@ export default class MainContainer extends Component {
     }
     
     render() {
+        const categories = this.state.categories.filter(c => c.name.toLowerCase().includes(this.state.search))
         return (
             <div>
-                <NavBar />
-                <h1>MainContainer Component</h1>
-                <Carousel categories={this.state.categories}/>
+                <NavBar setSearch={this.setSearch}/>
+                <Carousel categories={categories}/>
                 <Footer />
             </div>
         )
