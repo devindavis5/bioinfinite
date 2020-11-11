@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import SubCategoryShowPage from './SubCategoryShowPage.js'
 // import QuizForm from './QuizForm.js'
 import Card from 'react-bootstrap/Card'
+import Accordion from 'react-bootstrap/Accordion'
+import TopicShowPageNavBar from './TopicShowPageNavBar.js'
 
 export default class TopicShowPage extends Component {
     constructor() {
@@ -26,6 +28,17 @@ export default class TopicShowPage extends Component {
     render() {
         return (
             <div>
+                <TopicShowPageNavBar/>
+                <Accordion defaultActiveKey="0">
+                <Card>
+                    <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        For each subcategory...
+                    </Accordion.Toggle>
+                    </Card.Header>
+                    <Accordion.Collapse eventKey="0">
+                    <Card.Body>Subcategory Body</Card.Body>
+                    </Accordion.Collapse>
                 <div>
                 <Card className="text-center" style={{ width: '100%' }}>
                 <Card.Body>
