@@ -4,11 +4,13 @@ import SubCategoryShowPage from './SubCategoryShowPage.js'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
+import TopicShowPageNavBar from './TopicShowPageNavBar.js'
 
 export default class TopicShowPage extends Component {
     render() {
         return (
             <div>
+                <TopicShowPageNavBar/>
                 <Accordion defaultActiveKey="0">
                 <Card>
                     <Card.Header>
