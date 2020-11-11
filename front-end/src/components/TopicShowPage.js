@@ -28,17 +28,7 @@ export default class TopicShowPage extends Component {
     render() {
         return (
             <div>
-                <TopicShowPageNavBar/>
-                <Accordion defaultActiveKey="0">
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                        For each subcategory...
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                    <Card.Body>Subcategory Body</Card.Body>
-                    </Accordion.Collapse>
+                <TopicShowPageNavBar user={this.props.location.state.user} history={this.props.history} />
                 <div>
                 <Card className="text-center" style={{ width: '100%' }}>
                 <Card.Body>

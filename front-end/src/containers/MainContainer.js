@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Carousel from '../components/Carousel.js'
 import NavBar from '../components/NavBar.js'
-import Footer from '../components/Footer.js'
+// import Footer from '../components/Footer.js'
 
 export default class MainContainer extends Component {
 
@@ -26,8 +26,8 @@ export default class MainContainer extends Component {
         return (
             <div>
                 <NavBar setSearch={this.setSearch} user={this.state.user} />
-                <Carousel categories={categories} />
-                <Footer />
+                <Carousel categories={categories} history={this.props.history} user={this.state.user} />
+                {/* <Footer /> */}
             </div>
         )
     }
