@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 export default class SignIn extends Component {
     constructor() {
@@ -48,7 +49,10 @@ export default class SignIn extends Component {
 
     render() {
         return (
-            <div>
+            <div className="login-form">
+                <Card style={{ width: '25rem' }}>
+                <Card.Header className="text-center">Sign In</Card.Header>
+                <Card.Body>
                 <Form>
                     <Form.Group controlId="formBasicUsername">
                         <Form.Label>Name</Form.Label>
@@ -59,9 +63,10 @@ export default class SignIn extends Component {
                         <Form.Control type="password" name="password" onChange={this.onChange} />
                     </Form.Group>
                     <Button to="/maincontainer" onClick={this.onSubmit} variant="primary" type="submit">Sign in</Button>
+                    <Button variant="primary float-right" onClick={this.signUp} type="submit">Sign up Instead</Button>
                 </Form>
-                <br></br>
-                <Button variant="primary" onClick={this.signUp} type="submit">Sign up Instead</Button>
+                </Card.Body>
+                </Card>
             </div>
         )
     }

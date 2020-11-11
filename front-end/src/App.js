@@ -26,9 +26,14 @@ class App extends Component  {
   render() {
     return (
       <div>
-        <h1>Homepage</h1>
-        <Button onClick={this.signInClick}>Sign In</Button>
-        <Button onClick={this.signUpClick}>Sign Up</Button>
+        <div className="title">
+            <h1 >Life Science</h1>
+        </div>
+        <div className="login-button">
+          <Button onClick={this.signInClick} size="lg">Sign In</Button>
+          <div className="divider"/>
+          <Button onClick={this.signUpClick} size="lg" >Sign Up</Button>  
+        </div>
       </div>
     );
   }
