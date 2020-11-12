@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
 // import Category from './Category.js'
 import Carousel from 'react-bootstrap/Carousel'
-import img from '../assets/cool-background.png'
+import img from '../assets/cool-background.jpg'
 
 export default class CarouselComponent extends Component {
-    
-        // state = {
-        //     categories: this.props.categories
-        // }
     
     handleClick = (categoryID) => {
         // window.location.href = `/category/${categoryID}`
@@ -16,11 +12,10 @@ export default class CarouselComponent extends Component {
     }
   
     render() {
-        // const c = this.props.categories
-        // console.log(c)
         return (
             <div>
-                <Carousel>
+                <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1>
+                  <Carousel>
                 {this.props.categories.map(c => {
                     return (
                     <Carousel.Item className="slide" onClick={() => this.handleClick(c.id)}>
@@ -35,10 +30,7 @@ export default class CarouselComponent extends Component {
                 </Carousel.Item>  
                     ) 
                 })}
-                </Carousel>
-                {/* {this.props.categories.map(category => {
-                    return <Category category={category} history={this.props.history} key={category.id} user={this.props.user}/>
-                })} */}
+                </Carousel>  
             </div>
         )
     }
