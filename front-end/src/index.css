@@ -46,7 +46,11 @@ body {
   top: 30%;
   left: 50%;
   margin: 0 -150px;
-  /* margin: -100px 0 0 -150px; */
-  /* width: 300px;
-  height: 200px; */
 }
+
+.slide {
+  width:100%;
+  /* max-height: 600px !important; */
+  height: 100%
+}
+

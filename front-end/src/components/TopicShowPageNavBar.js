@@ -25,7 +25,8 @@ export default class TopicShowPageNavBar extends Component {
 
     mainContainer = () => {
         const history = this.props.history
-        history.push({pathname: `/maincontainer`, state: { user: this.props.user}})
+        // history.push({pathname: `/maincontainer`, state: { user: this.props.user}})
+        history.goBack()
     }
 
     render() {

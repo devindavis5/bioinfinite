@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Carousel from '../components/Carousel.js'
+import CarouselComponent from '../components/CarouselComponent.js';
 import NavBar from '../components/NavBar.js'
 // import Footer from '../components/Footer.js'
 
@@ -17,7 +17,8 @@ export default class MainContainer extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/categories").then(res => res.json())
+        fetch("http://localhost:3000/categories")
+        .then(res => res.json())
         .then(categories => this.setState({categories}))
     }
     
@@ -26,7 +27,7 @@ export default class MainContainer extends Component {
         return (
             <div>
                 <NavBar setSearch={this.setSearch} user={this.state.user} />
-                <Carousel categories={categories} history={this.props.history} user={this.state.user} />
+                <CarouselComponent categories={categories} history={this.props.history} user={this.state.user} />
                 {/* <Footer /> */}
             </div>
         )
