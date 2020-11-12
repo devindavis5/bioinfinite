@@ -14,7 +14,7 @@ export default class CarouselComponent extends Component {
     render() {
         return (
             <div>
-                <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1>
+                
                   <Carousel>
                 {this.props.categories.map(c => {
                     return (
@@ -30,7 +30,8 @@ export default class CarouselComponent extends Component {
                 </Carousel.Item>  
                     ) 
                 })}
-                </Carousel>  
+                </Carousel>
+                <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1> 
             </div>
         )
     }
