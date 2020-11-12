@@ -57,7 +57,7 @@ export default class TopicShowPage extends Component {
                 <div>
                 <Card className="text-center" style={{ width: '100%' }}>
                 <Card.Body>
-                    <Card.Title as="h1"><img width="35" height="35" className="d-inline-block align-center" alt="back" src={this.findSource()}/> {this.state.category.name}</Card.Title>
+                    <Card.Title as="h1"><img width="40" height="40" className="d-inline-block align-center" id="icon" alt="back" src={this.findSource()}/> {this.state.category.name}</Card.Title>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '100%' }}>
