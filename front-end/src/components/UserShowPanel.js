@@ -7,29 +7,59 @@ import Moment from 'react-moment'
 import ListGroup from 'react-bootstrap/ListGroup'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
-import Cells from '../assets/cells.png'
-import Macromolecules from '../assets/macromolecules.png'
-import Metabolism from '../assets/metabolism.png'
-import Photosynthesis from '../assets/photosynthesis.png'
-import DNA from '../assets/dna.png'
-
+import Cells from '../assets/pink.png'
+import Macromolecules from '../assets/orange.png'
+import Metabolism from '../assets/green.png'
+import Photosynthesis from '../assets/blue.png'
+import DNA from '../assets/purple.png'
 
 export default class UserShowPanel extends Component {
 
     state = {
-        avatar: img
+        avatar: this.props.user.img_url
     }
 
     setAvatar = (e) => {
-        this.setState({avatar: e.target.alt})
+        let src = e.target.alt
+        console.log(src)
+        
+        fetch(`http://localhost:3000/users/${this.props.user.id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type":"application/json",
+                "Accept":"application/json"
+            },
+            body: JSON.stringify({img_url: src})
+        })
+        .then(res => res.json())
+        .then(user => this.setState({avatar: user.img_url}))
+    }
+
+    findSource = () => {
+        let source
+        let name = this.state.avatar
+        if (name === 'A') {
+            source = Cells
+        } else if (name === 'B') {
+            source = Macromolecules
+        } else if (name === 'C') {
+            source = Metabolism
+        } else if (name === 'D') {
+            source = DNA
+        } else if (name === 'E') {
+            source = Photosynthesis
+        } else if (name === 'F') {
+            source = img
+        }
+         return source
     }
 
     render() {
         const user = this.props.user
         return (
             <div className="position-absolute" style={{zIndex:10}}>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.state.avatar} />
+                <Card style={{ width: '24rem' }}>
+                <Card.Img variant="top" id="avatar" src={this.findSource()} />
                 <Card.Body>
                     <Card.Title>{user.name}
                 {['right'].map((placement) => (
@@ -42,18 +72,18 @@ export default class UserShowPanel extends Component {
                         <Popover.Title as="h3">Select an Avatar</Popover.Title>
                         <Popover.Content>
                             {/* <strong>Holy guacamole!</strong> Check this info. */}
-                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt={Cells} src={Cells}/>
-                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt={Macromolecules} src={Macromolecules}/>
-                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt={Metabolism} src={Metabolism}/>
-                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt={DNA} src={DNA}/>
-                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt={Photosynthesis} src={Photosynthesis}/>
+                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="A" src={Cells}/>
+                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="B" src={Macromolecules}/>
+                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="C" src={Metabolism}/>
+                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="D" src={DNA}/>
+                            <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="E" src={Photosynthesis}/>
                         </Popover.Content>
                         </Popover>}>
                     <Button variant="outline-secondary float-right" size="sm">Avatars</Button>
                     </OverlayTrigger>
                 ))}              
                 </Card.Title>                            
-                <small className="text-muted">___________________________________________</small>
+                <small className="text-muted">____________________________________________________________</small>
                 </Card.Body>
                 <Card.Body>
                     <ListGroup variant="flush">

@@ -10,7 +10,8 @@ export default class SignUp extends Component {
         this.state = {
             email: "",
             name: "",
-            password: ""
+            password: "",
+            img_url: 'F'
         }
     }
 
@@ -25,13 +26,14 @@ export default class SignUp extends Component {
             method: 'POST',
             headers: {
                 "Content-Type":"application/json",
-                "Accepts":"application/json"
+                "Accept":"application/json"
             },
             body: JSON.stringify({
                 user: {
                     name: this.state.name,
                     email: this.state.email,
-                    password: this.state.password
+                    password: this.state.password,
+                    img_url: this.state.img_url
                 }
             })
         })

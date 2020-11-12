@@ -63,9 +63,54 @@ body {
   top: 30%;
   left: 40%;
   margin: 0 -150px;
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 #icon {
   margin-bottom: .45%;
 }
 
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.5;}
+  }
+  
+  @-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.5;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.5;}
+  }
+  
+  @-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.5;}
+  }
+  
+  @-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.5;}
+  }
+/* 
+  #avatar {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+  } */
+
+.carousel h1{
+  color: black;
+  text-shadow: -1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white;
+  font-size: 4vw;
+}
+
+/* .carousel-card {
+  color: black;
+} */
