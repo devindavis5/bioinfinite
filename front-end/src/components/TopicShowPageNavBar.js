@@ -6,7 +6,6 @@ import Nav from 'react-bootstrap/Nav'
 import UserShowPanel from '../components/UserShowPanel.js'
 import img from '../assets/back-arrow.png'
 
-
 export default class TopicShowPageNavBar extends Component {
     
     state = {
@@ -25,7 +24,8 @@ export default class TopicShowPageNavBar extends Component {
 
     mainContainer = () => {
         const history = this.props.history
-        history.push({pathname: `/maincontainer`, state: { user: this.props.user}})
+        // history.push({pathname: `/maincontainer`, state: { user: this.props.user}})
+        history.goBack()
     }
 
     render() {

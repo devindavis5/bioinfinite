@@ -2,8 +2,12 @@ import React, {Component} from 'react';
 import SubCategoryShowPage from './SubCategoryShowPage.js'
 // import QuizForm from './QuizForm.js'
 import Card from 'react-bootstrap/Card'
-import Accordion from 'react-bootstrap/Accordion'
 import TopicShowPageNavBar from './TopicShowPageNavBar.js'
+import Cells from '../assets/cells.png'
+import Macromolecules from '../assets/macromolecules.png'
+import Metabolism from '../assets/metabolism.png'
+import Photosynthesis from '../assets/photosynthesis.png'
+import DNA from '../assets/dna.png'
 
 export default class TopicShowPage extends Component {
     constructor() {
@@ -11,7 +15,7 @@ export default class TopicShowPage extends Component {
 
         this.state = {
             subcategories: [],
-            category: {}
+            category: {},
         }
     }       
 
@@ -22,8 +26,29 @@ export default class TopicShowPage extends Component {
 
          fetch(`http://localhost:3000/categories/${this.props.match.params.id}`)
         .then(res => res.json())
-        .then(category => this.setState({category}))
+        .then(category => {
+            this.setState({category})
+
+        })
     }
+
+    findSource = () => {
+        let source
+        let name = this.state.category.name
+        if (name === 'Cells') {
+            source = Cells
+        } else if (name === 'Macromolecules') {
+            source = Macromolecules
+        } else if (name === 'Metabolism') {
+            source = Metabolism
+        } else if (name === 'Photosynthesis') {
+            source = Photosynthesis
+        } else if (name === 'DNA Replication') {
+            source = DNA
+        }
+        return source
+    }
+
  
     render() {
         return (
@@ -32,7 +57,7 @@ export default class TopicShowPage extends Component {
                 <div>
                 <Card className="text-center" style={{ width: '100%' }}>
                 <Card.Body>
-                    <Card.Title as="h1">{this.state.category.name}</Card.Title>
+                    <Card.Title as="h1"><img width="40" height="40" className="d-inline-block align-center" id="icon" alt="back" src={this.findSource()}/> {this.state.category.name}</Card.Title>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '100%' }}>
