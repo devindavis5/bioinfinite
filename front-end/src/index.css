@@ -25,13 +25,17 @@ body {
   /* background-color: lightskyblue; */
 /* } */
 
+.bree {
+  font-family: 'Archivo', serif;
+}
+
 .title {
-  margin-top: 8%;
+  padding-top: 15%;
   text-align: center;
 }
 
 .login-button {
-  margin-top: 12%;
+  margin-top: 3%;
   text-align: center;
 }
 
@@ -63,7 +67,7 @@ body {
   top: 30%;
   left: 40%;
   margin: 0 -150px;
-  animation: fadeIn ease 3s;
+  animation: fadeIn ease 6s;
   -webkit-animation: fadeIn ease 3s;
   -moz-animation: fadeIn ease 3s;
   -o-animation: fadeIn ease 3s;
@@ -71,6 +75,10 @@ body {
 }
 
 #icon {
+  margin-bottom: .45%;
+}
+
+#logo {
   margin-bottom: .45%;
 }
 
@@ -114,3 +122,21 @@ body {
 /* .carousel-card {
   color: black;
 } */
+
+.homepage {
+  background-image: url(./assets/turq.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.background {
+  background-image: url(./assets/turq.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}

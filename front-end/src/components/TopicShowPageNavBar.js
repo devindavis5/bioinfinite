@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 // import Button from 'react-bootstrap/Button'
 import UserShowPanel from '../components/UserShowPanel.js'
 import img from '../assets/back-arrow.png'
+import Logo from '../assets/biologo2.png'
 
 export default class TopicShowPageNavBar extends Component {
     
@@ -32,7 +33,7 @@ export default class TopicShowPageNavBar extends Component {
         return (
             <div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top" >
-                <Navbar.Brand href="/home">Life Science</Navbar.Brand>
+                <Navbar.Brand href="/home"><img width="23" height="23" className="d-inline-block align-center" id="icon" alt="back" src={Logo}/> BioInfinite</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">

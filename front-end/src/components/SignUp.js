@@ -55,6 +55,7 @@ export default class SignUp extends Component {
 
     render() {
         return (
+            <div className="background">
             <div className="login-form">
                 <Card style={{ width: '25rem' }}>
                 <Card.Header className="text-center">New User</Card.Header>
@@ -72,12 +73,12 @@ export default class SignUp extends Component {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" onChange={this.onChange} />
                 </Form.Group>
-                <Button onClick={this.onSubmit} variant="primary" type="submit">Create Account</Button>
-                <Button variant="primary float-right" onClick={this.signIn} type="submit">Sign in Instead</Button>
+                <Button onClick={this.onSubmit} variant="outline-info" type="submit">Create Account</Button>
+                <Button variant="outline-info float-right" onClick={this.signIn} type="submit">Sign in Instead</Button>
             </Form>
             </Card.Body>
             </Card>
-            
+        </div>
         </div>
         )
     }

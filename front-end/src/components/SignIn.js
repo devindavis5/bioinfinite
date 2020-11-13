@@ -49,6 +49,7 @@ export default class SignIn extends Component {
 
     render() {
         return (
+            <div className="background">
             <div className="login-form">
                 <Card style={{ width: '25rem' }}>
                 <Card.Header className="text-center">Sign In</Card.Header>
@@ -62,11 +63,12 @@ export default class SignIn extends Component {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name="password" onChange={this.onChange} />
                     </Form.Group>
-                    <Button to="/maincontainer" onClick={this.onSubmit} variant="primary" type="submit">Sign in</Button>
-                    <Button variant="primary float-right" onClick={this.signUp} type="submit">Sign up Instead</Button>
+                    <Button to="/maincontainer" onClick={this.onSubmit} variant="outline-info" type="submit">Sign in</Button>
+                    <Button variant="outline-info float-right" onClick={this.signUp} type="submit">Sign up Instead</Button>
                 </Form>
                 </Card.Body>
                 </Card>
+            </div>
             </div>
         )
     }

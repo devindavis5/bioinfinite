@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 // import Category from './Category.js'
 import Carousel from 'react-bootstrap/Carousel'
 // import img from '../assets/cool-background.jpg'
-// import bg from '../assets/seafoam.jpeg'
 import Card from 'react-bootstrap/Card'
 // import TopicShowPageNavBar from './TopicShowPageNavBar.js'
 import Cells from '../assets/cellsb.jpg'
@@ -21,7 +20,6 @@ export default class CarouselComponent extends Component {
 
     findSource = (name) => {
         let source
-        console.log(name)
         if (name === 'Cells') {
             source = Cells
         } else if (name === 'Macromolecules') {
@@ -33,13 +31,12 @@ export default class CarouselComponent extends Component {
         } else if (name === 'Photosynthesis') {
             source = Photosynthesis
         }
-        console.log(source)
         return source
     }
 //   <img variant="top" id="avatar" src={this.findSource(c.name)} />
     render() {
         return (
-            <div className="carousel">
+            <div className="carousel"  style={{zIndex:3}}>
                   <Carousel>
                 {this.props.categories.map(c => {
                     return (
@@ -56,8 +53,8 @@ export default class CarouselComponent extends Component {
                     ) 
                 })}
                 </Carousel>
-                <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1> 
-            </div>
+                <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1>
+            </div>    
         )
     }
 }

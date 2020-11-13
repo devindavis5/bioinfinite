@@ -9,13 +9,13 @@ export default class SubCategoryShowPage extends Component {
             <div>
                 <Accordion defaultActiveKey="0">
                 <Card>
-                    <Card.Header>
+                    <Card.Header className="bree">
                     <Accordion.Toggle as={Button} variant="link" eventKey="1">
                         {this.props.subcategory.name}
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
-                    <Card.Body>{this.props.subcategory.description}</Card.Body>
+                    <Card.Body className="bree">{this.props.subcategory.description}</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 </Accordion>
