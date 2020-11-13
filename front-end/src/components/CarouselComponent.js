@@ -33,18 +33,20 @@ export default class CarouselComponent extends Component {
         }
         return source
     }
-//   <img variant="top" id="avatar" src={this.findSource(c.name)} />
+
     render() {
+        // console.log(this.props.categories)
         return (
+            <div className="background">
             <div className="carousel"  style={{zIndex:3}}>
-                  <Carousel>
+            <Carousel fade={true} >
                 {this.props.categories.map(c => {
                     return (
                     <Carousel.Item className="slide" onClick={() => this.handleClick(c.id)}>
                     <img
                     className="d-block w-100"
                     src={this.findSource(c.name)}
-                    alt="First slide"
+                    alt={c.name}
                     />
                     <Carousel.Caption>
                     <h1 className="bree2" >{c.name}</h1>
@@ -54,6 +56,7 @@ export default class CarouselComponent extends Component {
                 })}
                 </Carousel>
                 <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1>
+            </div>
             </div>    
         )
     }

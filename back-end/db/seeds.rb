@@ -13,7 +13,7 @@ Question.destroy_all
 SubCategory.destroy_all
 
 #User Instances
-bree = User.create(name: "Bree", email: "bree@gmail.com", password: "3693" )
+bree = User.create(name: "Bree Warren", email: "bree@gmail.com", password: "3693", img_url: 'F')
 
 #Category and SubCategory Instances
 

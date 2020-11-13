@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index]
+    skip_before_action :authorized, only: [:create, :index, :show, :update]
 
     def index
         users = User.all
@@ -8,6 +8,11 @@ class UsersController < ApplicationController
 
     def profile
         render json: { user: current_user }, status: :accepted
+    end
+
+    def show
+        user = User.find(params[:id])
+        render json: user
     end
 
     def create
@@ -19,11 +24,17 @@ class UsersController < ApplicationController
           render json: { error: 'failed to create user' }, status: :not_acceptable
         end
     end
+
+    def update
+        user = User.find(params[:id])
+        user.update(img_url: params[:img_url])
+        render json: user
+    end
      
     private
      
     def user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password, :img_url)
     end
 
 end
