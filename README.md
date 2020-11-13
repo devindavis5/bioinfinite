@@ -1,10 +1,12 @@
-# science-y app.
+# Bio Infinite.
 
 ### Technical Description: 
-description here
+A full-stack web application, created with:
+- Server Side: Ruby on Rails
+- Client Side: JavaScript React
 
 ### App Description:
-description here
+Created by Devin Davis and Bree Warren, BioInfinite serves as an interactive learning tool that allows a user to gain knowledge in several subjects in the scope of Biology.
 
 -----
 ## Instructions:
@@ -13,29 +15,12 @@ description here
 
 ## Models & Relationships
 
-### User | Quiz (Join Model) | Category | Question (Join Model) | SubCategory
+### User | Category | SubCategory
 
 <br/>
 
-### User <br />
-* A User has many Quizzes
-* A User has many Categories, throguh Quizzes
-
 ### Category <br />
-* A Category has many Quizzes (direct)
-* A Category has many Users, through Quizzes
-* A Category has many Questions
 * A Category has many SubCategories 
-
-### Quiz (Join Model) <br/>
-* A Quiz belong to a User
-* A Quiz belongs to a Category
-* A Quiz has many Questions
-* A Quiz has many Categories, through Questions
-
-### Question (Join Model)
-* A Question belongs to a Quiz
-* A Question belongs to a Category
 
 ### SubCategory
 * A SubCategory belongs to a Category
@@ -44,88 +29,48 @@ description here
 
 ## SQL Database Table Properties
 ### User Table Properties
-* First Name
+* Name
+* Email
+* Password
+* Image
 
 ### Categories Table Properties 
-* Topic Name
-* Topic Image URL
+* Name
+* Image
 * Introduction
-* Conclusion?
 
-### Quiz Table Properties
-* Score
-* UserID (Foreign Key)
-* CategoryID (Foreign Key)
-
-### Question Table Properties
+### SubCategory Table Properties
+* Name
 * Description
-* Difficulty Level (default value unless time persists)
-* Correct Answer
-* Wrong Answer 1
-* Wrong Answer 2
-* Wrong Answer 3
-* CategoryID (Foreign ID)
-* QuizID (Foreign ID)
-
-### Subcategory Table Properties
-* Category Details
 * CategoryID (Foreign Key)
 
 #
 
 ## Component Hierarchy
-* App - UserShowPage - UserQuizHistory
-* App - NavBar
-* App - Footer
+* App - SignIn
+* App - SignUp
 * App - MainContainer
 * MainContainer - SearchBar
-* MainContainer - Carousel - TopicPanel
+* MainContainer - NavBar - UserShowPanel
+* MainContainer - Carousel - Category
 * MainContainer - TopicShowPage - SubCategoryShowPage
-* TopicShowPage - QuizForm
+* TopicShowPage - TopicShowPageNavBar - UserShowPanel
 
 #
 
 ## Functionality
-* Search Bar
-* Carousel for Panels
-  * Uniform Icons related to Categories on each pane
-* Show Page for each panel
-  * Topic header, intro, visuals (pictures, videos?), lesson, teal layout with white
-background for words
-* Transitions
-* Profile Avatar Selection (upon creation of cacount)
-* Uniform Icons related to Categories on each panel
-* Quizzes with full CRUD functionality
+* User Model with full CRUD Functionality
+* User Login & Authentication with Token
+* User Validations and Authorization 
+* Carousel Feature with Dynamic Rendering
+* Navigation Bar with:
+  * Profile Panel, Logout, & Search Bar to narrow topics
+    * Avatar selection and User info on profile panel
+* Show page for each panel
+  * Navbar, dynamically rendered header, icons, and lesson for each topic split into subtopics
 
 #
-## Stretch Goals
-* DNA Helix (AGCT, etc.)
-  * Click and Drag feature
-* Other interactive learning tools on each Cateogry/Lesson
------
 
-## Tenative Schedule
-### Tuesday
-* navbar/logout feature
-  * profile dropdown (myinfo, quiz history, logout)
-* map out navigation of routing/dynamic web page
-* home page (login/logout)
-### Wednesday
-* maincontainer page (category page)
-  * carousel (MVP)
-* category show page
-  * table with extendable rows (header, introduction, subcategories, etc)
-* profile sidebar feature
-### Thursday
-* only css changes
-* decide and begin on which stretch goals to pursue
-* final feature and stretch goal additions
-### Friday
-* record walkthrough video/voiceover
-* update readme with any changes
-  * finish things learned/highlights/difficulties, etc
-* present
-#
 ## Related Information
 <br/>
 
@@ -133,11 +78,16 @@ background for words
  [Video Demo Link](https://video.com/blahblahblah)
 
 ### Difficulties/Things Learned:
-* 
+* Implementing JWT Authorization upon User login
+* Passing state through props
+* Accessing/changing deeply nested components
 
 ### Changes/Modifications/Additions:
-* 
-
+* Add more lessons to database (everything is rendered dynamically to support growth)
+* Add quiz feature at end of each lesson, record User scores
+* Add visuals to topic show pages such as diagrams and interactive learning tools
 
 ### Highlights
-* 
+* Popout Avatar selection feature
+* Homepage & Login Aesthetic
+* Accordion Feature for SubCategories
