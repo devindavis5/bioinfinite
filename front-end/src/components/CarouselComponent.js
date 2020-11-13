@@ -36,6 +36,7 @@ export default class CarouselComponent extends Component {
 //   <img variant="top" id="avatar" src={this.findSource(c.name)} />
     render() {
         return (
+            <div className="background">
             <div className="carousel"  style={{zIndex:3}}>
                   <Carousel>
                 {this.props.categories.map(c => {
@@ -54,6 +55,7 @@ export default class CarouselComponent extends Component {
                 })}
                 </Carousel>
                 <h1 className="none">{this.props.categories[0] === undefined ? 'There are no topics by that name.' : null }</h1>
+            </div>
             </div>    
         )
     }
