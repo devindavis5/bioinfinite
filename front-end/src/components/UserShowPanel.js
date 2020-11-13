@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import QuizHistory from './QuizHistory.js'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import img from '../assets/kemptons-blank-profile-picture.jpg'
@@ -21,8 +20,6 @@ export default class UserShowPanel extends Component {
 
     setAvatar = (e) => {
         let src = e.target.alt
-        console.log(src)
-        
         fetch(`http://localhost:3000/users/${this.props.user.id}`, {
             method: 'PATCH',
             headers: {
@@ -32,34 +29,75 @@ export default class UserShowPanel extends Component {
             body: JSON.stringify({img_url: src})
         })
         .then(res => res.json())
-        .then(user => this.setState({avatar: user.img_url}))
+        .then(user => {
+            let name = user.img_url
+            if (name === 'A') {
+                this.setState({
+                    avatar: Cells 
+                })
+            } else if (name === 'B') {
+                this.setState({
+                    avatar: Macromolecules
+                })
+            } else if (name === 'C') {
+                this.setState({
+                    avatar: Metabolism
+                })
+            } else if (name === 'D') {
+                this.setState({
+                    avatar: DNA
+                })
+            } else if (name === 'E') {
+                this.setState({
+                    avatar: Photosynthesis
+                })
+            } else if (name === 'F') {
+                this.setState({
+                    avatar: img
+                })
+            }
+        })
     }
 
-    findSource = () => {
-        let source
-        let name = this.state.avatar
-        if (name === 'A') {
-            source = Cells
-        } else if (name === 'B') {
-            source = Macromolecules
-        } else if (name === 'C') {
-            source = Metabolism
-        } else if (name === 'D') {
-            source = DNA
-        } else if (name === 'E') {
-            source = Photosynthesis
-        } else if (name === 'F') {
-            source = img
-        }
-         return source
+    componentDidMount() {
+        fetch(`http://localhost:3000/users/${this.props.user.id}`)
+        .then(res => res.json())
+        .then(user => {
+            let name = user.img_url
+            if (name === 'A') {
+                this.setState({
+                avatar: Cells 
+            })
+            } else if (name === 'B') {
+                this.setState({
+                    avatar: Macromolecules
+                })
+            } else if (name === 'C') {
+                this.setState({
+                    avatar: Metabolism
+                })
+            } else if (name === 'D') {
+                this.setState({
+                    avatar: DNA
+                })
+            } else if (name === 'E') {
+                this.setState({
+                    avatar: Photosynthesis
+                })
+            } else if (name === 'F') {
+                this.setState({
+                    avatar: img
+                })
+            }
+        })
     }
 
     render() {
         const user = this.props.user
         return (
             <div className="position-absolute" style={{zIndex:10}}>
-                <Card style={{ width: '24rem' }}>
-                <Card.Img variant="top" id="avatar" src={this.findSource()} />
+                <Card className="user-panel" style={{ width: '24rem' }}>
+                <Card.Img variant="top" id="avatar" src={this.state.avatar} />
                 <Card.Body>
                     <Card.Title>{user.name}
                 {['right'].map((placement) => (
@@ -71,7 +109,6 @@ export default class UserShowPanel extends Component {
                         <Popover id={`popover-positioned-${placement}`}>
                         <Popover.Title as="h3">Select an Avatar</Popover.Title>
                         <Popover.Content>
-                            {/* <strong>Holy guacamole!</strong> Check this info. */}
                             <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="A" src={Cells}/>
                             <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="B" src={Macromolecules}/>
                             <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="C" src={Metabolism}/>
@@ -79,7 +116,7 @@ export default class UserShowPanel extends Component {
                             <img width="40" height="40" onClick={this.setAvatar} className="d-inline-block align-center" id="icon" alt="E" src={Photosynthesis}/>
                         </Popover.Content>
                         </Popover>}>
-                    <Button variant="outline-secondary float-right" size="sm">Avatars</Button>
+                    <Button variant="outline-info float-right" size="sm">Avatars</Button>
                     </OverlayTrigger>
                 ))}              
                 </Card.Title>                            
@@ -92,7 +129,7 @@ export default class UserShowPanel extends Component {
                     <ListGroup.Item className="text-info">Member Join Date:</ListGroup.Item>
                     <ListGroup.Item><Moment format="MMMM DD, YYYY" trim="true">{user.created_at}</Moment></ListGroup.Item>
                     </ListGroup>
-                    <Button variant="outline-secondary float-right" onClick={() => this.props.profile()} size="sm">Close</Button>
+                    <Button variant="outline-info float-right" onClick={() => this.props.profile()} size="sm">Close</Button>
                 </Card.Body>
                 </Card>
             </div>

@@ -1,6 +1,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button'
+import Bio from './assets/biologo.png'
 
 class App extends Component  {
   constructor() {
@@ -25,14 +26,14 @@ class App extends Component  {
 
   render() {
     return (
-      <div>
+      <div className="homepage" >
         <div className="title">
-            <h1 >Life Science</h1>
+            <img className="align-center" src={Bio}/>
         </div>
         <div className="login-button">
-          <Button onClick={this.signInClick} size="lg">Sign In</Button>
+          <Button onClick={this.signInClick} variant="outline-info" >Sign In</Button>
           <div className="divider"/>
-          <Button onClick={this.signUpClick} size="lg" >Sign Up</Button>  
+          <Button onClick={this.signUpClick} variant="outline-info" >Sign Up</Button>  
         </div>
       </div>
     );
