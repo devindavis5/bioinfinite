@@ -166,3 +166,8 @@ body {
 .nav-bar2 {
   box-shadow: 0px 0px 20px 0px black;
 }
+
+.carousel-indicators li {
+    background-color: red; 
+}
+ 

@@ -35,18 +35,18 @@ export default class CarouselComponent extends Component {
     }
 
     render() {
-        console.log(this.props.categories)
+        // console.log(this.props.categories)
         return (
             <div className="background">
             <div className="carousel"  style={{zIndex:3}}>
-                  <Carousel>
+            <Carousel fade={true} >
                 {this.props.categories.map(c => {
                     return (
                     <Carousel.Item className="slide" onClick={() => this.handleClick(c.id)}>
                     <img
                     className="d-block w-100"
                     src={this.findSource(c.name)}
-                    alt="First slide"
+                    alt={c.name}
                     />
                     <Carousel.Caption>
                     <h1 className="bree2" >{c.name}</h1>
