@@ -33,8 +33,9 @@ export default class CarouselComponent extends Component {
         }
         return source
     }
-//   <img variant="top" id="avatar" src={this.findSource(c.name)} />
+
     render() {
+        console.log(this.props.categories)
         return (
             <div className="background">
             <div className="carousel"  style={{zIndex:3}}>
