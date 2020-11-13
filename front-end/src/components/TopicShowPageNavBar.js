@@ -32,7 +32,7 @@ export default class TopicShowPageNavBar extends Component {
     render() {
         return (
             <div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top" >
+            <Navbar className="nav-bar" collapseOnSelect expand="lg" bg="light" variant="light" sticky="top" >
                 <Navbar.Brand href="/home"><img width="23" height="23" className="d-inline-block align-center" id="icon" alt="back" src={Logo}/> BioInfinite</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

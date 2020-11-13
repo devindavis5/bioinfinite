@@ -96,7 +96,7 @@ export default class UserShowPanel extends Component {
         const user = this.props.user
         return (
             <div className="position-absolute" style={{zIndex:10}}>
-                <Card style={{ width: '24rem' }}>
+                <Card className="user-panel" style={{ width: '24rem' }}>
                 <Card.Img variant="top" id="avatar" src={this.state.avatar} />
                 <Card.Body>
                     <Card.Title>{user.name}

@@ -29,6 +29,19 @@ body {
   font-family: 'Archivo', serif;
 }
 
+.bree2 {
+  font-family: 'Bree Serif', serif;
+  /* font-size: 50px; */
+  /* -webkit-text-stroke: 1px white; */
+  color: white;
+  text-shadow: 7px 7px 7px black;
+  font-size: 4vw;
+}
+
+.bree3 {
+  font-family: 'Archivo', serif;
+}
+
 .title {
   padding-top: 15%;
   text-align: center;
@@ -50,6 +63,7 @@ body {
   top: 30%;
   left: 50%;
   margin: 0 -150px;
+  box-shadow: 1px 1px 3px 1px gray;
 }
 
 .slide {
@@ -67,11 +81,11 @@ body {
   top: 30%;
   left: 40%;
   margin: 0 -150px;
-  animation: fadeIn ease 6s;
-  -webkit-animation: fadeIn ease 3s;
-  -moz-animation: fadeIn ease 3s;
-  -o-animation: fadeIn ease 3s;
-  -ms-animation: fadeIn ease 3s;
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
 }
 
 #icon {
@@ -113,11 +127,11 @@ body {
     object-fit: contain;
   } */
 
-.carousel h1{
+/* .carousel h1{
   color: black;
   text-shadow: -1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white;
   font-size: 4vw;
-}
+} */
 
 /* .carousel-card {
   color: black;
@@ -139,4 +153,16 @@ body {
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
+}
+
+.user-panel {
+  box-shadow: 1px 1px 20px 1px gray;
+}
+
+.nav-bar {
+  box-shadow: 0px 0px 10px 0px gray;
+}
+
+.nav-bar2 {
+  box-shadow: 0px 0px 20px 0px black;
 }

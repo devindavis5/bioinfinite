@@ -47,7 +47,7 @@ export default class CarouselComponent extends Component {
                     alt="First slide"
                     />
                     <Carousel.Caption>
-                    <h1>{c.name}</h1>
+                    <h1 className="bree2" >{c.name}</h1>
                     </Carousel.Caption>
                 </Carousel.Item>  
                     ) 

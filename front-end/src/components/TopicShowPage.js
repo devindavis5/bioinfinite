@@ -52,13 +52,12 @@ export default class TopicShowPage extends Component {
  
     render() {
         return (
-            // <div className="background">
             <div>
                 <TopicShowPageNavBar user={this.props.location.state.user} history={this.props.history} />
                 <div>
                 <Card className="text-center" style={{ width: '100%' }}>
                 <Card.Body>
-                    <h1 className="bree"><img width="40" height="40" className="d-inline-block align-center" id="icon" alt="back" src={this.findSource()}/> {this.state.category.name}</h1>
+                    <h1 className="bree3"><img width="40" height="40" className="d-inline-block align-center" id="icon" alt="back" src={this.findSource()}/> {this.state.category.name}</h1>
                 </Card.Body> 
                 </Card>
                 <Card style={{ width: '100%' }}>
@@ -73,7 +72,6 @@ export default class TopicShowPage extends Component {
                     <SubCategoryShowPage subcategory={s} key={s.id} />)})}
                 </div>
             </div>
-            // </div>
         )
     }
 }
