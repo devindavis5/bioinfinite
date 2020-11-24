@@ -75,7 +75,7 @@ Created by Devin Davis and Bree Warren, BioInfinite serves as an interactive lea
 <br/>
 
 ### Video Demo:
- [Video Demo Link](https://www.youtube.com/watch?v=fyt5f4rThxE)
+ [BioInfinite Demo Link](https://www.youtube.com/watch?v=fyt5f4rThxE)
 
 ### Difficulties/Things Learned:
 * Implementing JWT Authorization upon User login
