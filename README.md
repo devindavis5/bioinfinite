@@ -1,4 +1,4 @@
-# Bio Infinite.
+# BioInfinite
 
 ### Video Demo:
  [BioInfinite Demo Link](https://www.youtube.com/watch?v=fyt5f4rThxE)
