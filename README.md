@@ -1,5 +1,8 @@
 # Bio Infinite.
 
+### Video Demo:
+ [BioInfinite Demo Link](https://www.youtube.com/watch?v=fyt5f4rThxE)
+
 ### Technical Description: 
 A full-stack web application, created with:
 - Server Side: Ruby on Rails
@@ -73,9 +76,6 @@ Created by Devin Davis and Bree Warren, BioInfinite serves as an interactive lea
 
 ## Related Information
 <br/>
-
-### Video Demo:
- [BioInfinite Demo Link](https://www.youtube.com/watch?v=fyt5f4rThxE)
 
 ### Difficulties/Things Learned:
 * Implementing JWT Authorization upon User login
