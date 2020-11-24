@@ -1,7 +1,7 @@
 # BioInfinite
 
 ### Video Demo:
- [BioInfinite Demo Link](https://www.youtube.com/watch?v=fyt5f4rThxE)
+ [BioInfinite Demo](https://www.youtube.com/watch?v=fyt5f4rThxE)
 
 ### Technical Description: 
 A full-stack web application, created with:
